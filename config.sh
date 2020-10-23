@@ -19,7 +19,7 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 cp -r ~/dots/nvim ~/.config
 cp -r ~/dots/.zshrc ~/
 cp -r ~/dots/.fonts ~/
-sudo cp ~/dotfiles/scripts/* /usr/local/bin
+sudo cp ~/dots/scripts/* /usr/local/bin
 
 #zsh stuff
 git clone https://github.com/zsh-users/zsh-syntax-highlighting
