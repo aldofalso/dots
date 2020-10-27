@@ -10,7 +10,7 @@ sudo dnf remove rhythmbox gnome-maps gnome-contacts cheese nano
 sudo dnf update
 
 #install packages
-sudo dnf install zsh gnome-tweaks ffmpeg gimp cmatrix lm_sensors neovim youtube-dl python3-speedtest-cli nodejs
+sudo dnf install zsh gnome-tweaks ffmpeg gimp cmatrix lm_sensors neovim youtube-dl python3-speedtest-cli nodejs gcc kernel-devel make
 
 #add flathub repo
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
