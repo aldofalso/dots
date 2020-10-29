@@ -6,17 +6,18 @@ echo "max_parallel_downloads=10" | sudo tee -a /etc/dnf/dnf.conf
 #remove packages 
 sudo dnf remove rhythmbox gnome-maps gnome-contacts cheese nano 
 
+#add flathub repo
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+#add rpm repo
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
 #dnf update
 sudo dnf update
 
 #install packages
 sudo dnf install zsh gnome-tweaks ffmpeg gimp cmatrix lm_sensors neovim youtube-dl python3-speedtest-cli nodejs gcc kernel-devel make
 
-#add flathub repo
-sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-#add rpm repo
-sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 #dots
 cp -r ~/dots/nvim ~/.config
