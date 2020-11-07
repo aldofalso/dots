@@ -3,8 +3,11 @@
 #speed up dnf
 echo "max_parallel_downloads=10" | sudo tee -a /etc/dnf/dnf.conf
 
+#improve boot time
+sudo systemctl disable NetworkManager-wait-online.service
+
 #remove packages 
-sudo dnf remove rhythmbox gnome-maps gnome-contacts cheese nano 
+sudo dnf remove rhythmbox gnome-maps gnome-contacts cheese nano firefox 
 
 #add flathub repo
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -16,11 +19,10 @@ sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-releas
 sudo dnf update
 
 #install packages
-sudo dnf install zsh gnome-tweaks ffmpeg gimp cmatrix lm_sensors neovim youtube-dl python3-speedtest-cli nodejs gcc kernel-devel make
-
+sudo dnf install zsh gnome-tweaks ffmpeg gimp cmatrix lm_sensors neovim youtube-dl python3-speedtest-cli nodejs gcc kernel-devel make g++ chromium-freeworld
 
 #dots
-cp -r ~/dots/nvim ~/.config
+cp -r ~/dots/.vimrc ~/
 cp -r ~/dots/.zshrc ~/
 cp -r ~/dots/.fonts ~/
 sudo cp ~/dots/scripts/* /usr/local/bin
