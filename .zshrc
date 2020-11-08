@@ -13,8 +13,6 @@ setopt appendhistory
 autoload -U colors && colors
 
 #alias
-alias vim='nvim'
-alias vi='nvim'
 alias ls='ls --color=auto'
 
 #autocd
