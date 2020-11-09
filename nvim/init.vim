@@ -1,12 +1,14 @@
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+
+if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
+	echo "Downloading plugins..."
+	silent !mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/
+	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim
+	autocmd VimEnter * PlugInstall 
 endif
 
 " --- PLUGINS --- 
 
-call plug#begin('~/.vim/plugged')
+call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
 
       Plug 'bling/vim-airline'
       Plug 'morhetz/gruvbox'
@@ -18,6 +20,7 @@ call plug#end()
 " --- VIM SETTINGS ---
 
 let g:airline_powerline_fonts = 1
+set guicursor+=a:blinkon1
 set cursorline
 set termguicolors
 set encoding=utf-8
@@ -30,6 +33,5 @@ set smartindent
 set autoindent
 set fileformat=unix
 set noshowmode
-set bg=dark
 colorscheme gruvbox
 let g:airline#extensions#whitespace#enabled = 0 

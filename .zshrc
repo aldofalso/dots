@@ -14,6 +14,8 @@ autoload -U colors && colors
 
 #alias
 alias ls='ls --color=auto'
+alias vim='nvim'
+alias vi='nvim'
 
 #autocd
 setopt auto_cd
