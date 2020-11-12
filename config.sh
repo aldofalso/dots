@@ -7,7 +7,7 @@ echo "max_parallel_downloads=10" | sudo tee -a /etc/dnf/dnf.conf
 sudo systemctl disable NetworkManager-wait-online.service
 
 #remove packages 
-sudo dnf -y remove rhythmbox gnome-maps gnome-contacts cheese nano firefox 
+sudo dnf -y remove rhythmbox gnome-maps gnome-contacts cheese nano firefox fedora-chromium-config 
 
 #add flathub repo
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -24,7 +24,6 @@ sudo dnf -y install zsh gnome-tweaks ffmpeg gimp cmatrix lm_sensors neovim youtu
 #dots
 cp -r ~/dots/nvim ~/.config
 cp -r ~/dots/.zshrc ~/
-cp -r ~/dots/.fonts ~/
 sudo cp ~/dots/scripts/* /usr/local/bin
 
 #zsh stuff
