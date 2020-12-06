@@ -1,0 +1,4 @@
+#!/bin/sh
+# weather checker using wttr.in
+
+curl -s wttr.in/ | head -7
