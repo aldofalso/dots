@@ -7,7 +7,7 @@ echo "max_parallel_downloads=10" | sudo tee -a /etc/dnf/dnf.conf
 sudo systemctl disable NetworkManager-wait-online.service
 
 #remove packages 
-sudo dnf -y remove rhythmbox gnome-maps gnome-contacts nano firefox fedora-chromium-config gnome-weather
+sudo dnf -y remove rhythmbox gnome-maps gnome-contacts nano firefox fedora-chromium-config gnome-weather abrt gnome-abrt
 
 #add flathub repo
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -38,6 +38,9 @@ git clone https://github.com/denysdovhan/spaceship-prompt
 mv ~/dots/zsh-syntax-highlighting ~/.config
 mv ~/dots/zsh-autosuggestions ~/.config
 mv ~/dots/spaceship-prompt ~/.config
+
+# gnome settings
+mv ~/dots/dconf ~/.config 
 
 #change shell to zsh
 sudo usermod --shell /bin/zsh "$USER"
