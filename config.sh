@@ -23,7 +23,7 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 sudo dnf -y update
 
 #install packages
-sudo dnf -y install zsh gnome-tweaks ffmpeg gimp cmatrix lm_sensors neovim youtube-dl python3-speedtest-cli gcc kernel-devel make g++ chromium-browser-privacy chromium-freeworld telegram-desktop code
+sudo dnf -y install zsh gnome-tweaks ffmpeg gimp cmatrix cava lm_sensors neovim youtube-dl python3-speedtest-cli gcc kernel-devel make g++ chromium-browser-privacy chromium-freeworld telegram-desktop code neofetch
 
 #dots
 cp -r ~/dots/nvim ~/.config
@@ -40,6 +40,7 @@ mv ~/dots/zsh-autosuggestions ~/.config
 mv ~/dots/spaceship-prompt ~/.config
 
 # gnome settings
+rm -rf ~/.config/dconf
 cp -r ~/dots/dconf ~/.config 
 
 #change shell to zsh

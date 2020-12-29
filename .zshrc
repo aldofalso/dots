@@ -27,5 +27,5 @@ bindkey '^R' history-incremental-pattern-search-backward
 source ~/.config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.config//zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/spaceship-prompt/spaceship.zsh
-SPACESHIP_CHAR_SYMBOL=❯
+SPACESHIP_CHAR_SYMBOL=":"
 SPACESHIP_CHAR_SUFFIX=" "
