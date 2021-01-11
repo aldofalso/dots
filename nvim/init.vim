@@ -12,6 +12,8 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
       Plug 'bling/vim-airline'
       Plug 'jiangmiao/auto-pairs'
       Plug 'ap/vim-css-color'
+      Plug 'lifepillar/vim-solarized8'
+      Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
@@ -29,5 +31,8 @@ set smarttab
 set smartindent
 set autoindent
 set fileformat=unix
+set termguicolors
 set noshowmode
+set background=dark
+colorscheme solarized8
 let g:airline#extensions#whitespace#enabled = 0 
