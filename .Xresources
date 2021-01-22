@@ -1,8 +1,0 @@
-xterm*font: *-fixed-*-*-*-20-*
-xterm*background: black
-xterm*foreground: lightgray
-xterm*geometry: 105x35
-xterm*ScrollBar: false
-xterm*BorderWidth: 16
-XTerm*cursorBlink: true
-XTerm*selectToClipboard: true

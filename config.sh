@@ -7,7 +7,7 @@ echo "max_parallel_downloads=10" | sudo tee -a /etc/dnf/dnf.conf
 sudo systemctl disable NetworkManager-wait-online.service
 
 # remove packages 
-sudo dnf -y remove rhythmbox gnome-maps gnome-contacts nano firefox fedora-chromium-config gnome-weather abrt virtualbox-guest-additions gnome-software gnome-terminal
+sudo dnf -y remove rhythmbox gnome-maps gnome-contacts nano firefox fedora-chromium-config gnome-weather abrt virtualbox-guest-additions gnome-software
 
 # add flathub repo
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -23,11 +23,10 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 sudo dnf -y update
 
 # install packages
-sudo dnf -y install zsh gnome-tweaks ffmpeg gimp cmatrix cava lm_sensors vim youtube-dl python3-speedtest-cli gcc kernel-devel make g++ chromium-browser-privacy chromium-freeworld telegram-desktop code neofetch transmission xterm
+sudo dnf -y install zsh gnome-tweaks ffmpeg gimp cmatrix cava lm_sensors vim youtube-dl python3-speedtest-cli gcc kernel-devel make g++ chromium-browser-privacy chromium-freeworld telegram-desktop code neofetch transmission levien-inconsolata-fonts
 
 # dots
 cp -r ~/dots/.vimrc ~/
-cp -r ~/dots/.Xresources ~/
 cp -r ~/dots/.zshrc ~/
 sudo cp ~/dots/scripts/* /usr/local/bin
 
@@ -43,9 +42,6 @@ mv ~/dots/spaceship-prompt ~/.config
 # gnome settings
 rm -rf ~/.config/dconf
 cp -r ~/dots/dconf ~/.config 
-
-# load Xresources
-xrdb merge ~/.Xresources
 
 # change shell to zsh
 sudo usermod --shell /bin/zsh "$USER"
