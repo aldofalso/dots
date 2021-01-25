@@ -23,27 +23,15 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 sudo dnf -y update
 
 # install packages
-sudo dnf -y install zsh gnome-tweaks ffmpeg gimp cmatrix cava lm_sensors vim youtube-dl python3-speedtest-cli gcc kernel-devel make g++ chromium-browser-privacy chromium-freeworld telegram-desktop code neofetch transmission levien-inconsolata-fonts
+sudo dnf -y install gnome-tweaks ffmpeg gimp cmatrix cava lm_sensors vim youtube-dl python3-speedtest-cli gcc kernel-devel make g++ chromium-browser-privacy chromium-freeworld telegram-desktop code neofetch transmission levien-inconsolata-fonts
 
 # dots
 cp -r ~/dots/.vimrc ~/
-cp -r ~/dots/.zshrc ~/
+cp -r ~/dots/.bashrc ~/
 sudo cp ~/dots/scripts/* /usr/local/bin
-
-# zsh stuff
-git clone https://github.com/zsh-users/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions
-git clone https://github.com/denysdovhan/spaceship-prompt
-
-mv ~/dots/zsh-syntax-highlighting ~/.config
-mv ~/dots/zsh-autosuggestions ~/.config
-mv ~/dots/spaceship-prompt ~/.config
 
 # gnome settings
 rm -rf ~/.config/dconf
 cp -r ~/dots/dconf ~/.config 
-
-# change shell to zsh
-sudo usermod --shell /bin/zsh "$USER"
 
 echo done
