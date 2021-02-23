@@ -15,15 +15,11 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 # add rpm repo
 sudo dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-# add vscode repo
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
-
 # dnf update
 sudo dnf -y update
 
 # install packages
-sudo dnf -y install gnome-tweaks ffmpeg gimp cmatrix cava lm_sensors vim youtube-dl python3-speedtest-cli gcc kernel-devel make g++ chromium-freeworld telegram-desktop code neofetch transmission levien-inconsolata-fonts vlc
+sudo dnf -y install gnome-tweaks ffmpeg gimp cmatrix cava lm_sensors vim youtube-dl python3-speedtest-cli gcc kernel-devel make g++ chromium-freeworld telegram-desktop neofetch transmission levien-inconsolata-fonts vlc java-latest-openjdk-devel
 
 # dots
 cp -r ~/dots/.vimrc ~/
