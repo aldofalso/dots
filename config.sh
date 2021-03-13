@@ -19,7 +19,7 @@ sudo dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-rel
 sudo dnf -y update
 
 # install packages
-sudo dnf -y install gnome-tweaks ffmpeg gimp cmatrix cava lm_sensors vim youtube-dl python3-speedtest-cli gcc kernel-devel make g++ chromium-freeworld telegram-desktop neofetch transmission levien-inconsolata-fonts vlc java-latest-openjdk-devel
+sudo dnf -y install gnome-tweaks ffmpeg gimp cmatrix cava lm_sensors vim youtube-dl python3-speedtest-cli gcc kernel-devel make g++ chromium-freeworld telegram-desktop neofetch transmission levien-inconsolata-fonts vlc
 
 # dots
 cp -r ~/dots/.vimrc ~/
