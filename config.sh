@@ -19,12 +19,16 @@ sudo dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-rel
 sudo dnf -y update
 
 # install packages
-sudo dnf -y install ffmpeg gimp cmatrix cava lm_sensors vim youtube-dl python3-speedtest-cli gcc kernel-devel make g++ chromium-freeworld telegram-desktop neofetch transmission vlc htop gvfs gvfs-mtp simple-mtpfs kitty xss-lock xfce4-power-manager file-roller gamemode libreoffice-writer libreoffice-impress gnome-boxes redshift git 
+sudo dnf -y install ffmpeg gimp cmatrix cava lm_sensors vim youtube-dl python3-speedtest-cli gcc kernel-devel make g++ chromium-freeworld telegram-desktop neofetch transmission vlc htop gvfs gvfs-mtp simple-mtpfs kitty xss-lock xfce4-power-manager file-roller gamemode libreoffice-writer libreoffice-impress gnome-boxes redshift git maim gnome-calculator 
 
 # dots
 cp -r ~/dots/.vimrc ~/
 cp -r ~/dots/.bashrc ~/
 sudo cp ~/dots/scripts/* /usr/local/bin
+cp -r ~/dots/.config ~/
+
+# remove default wallpaper
+sudo rm -rf /usr/share/backgrounds
 
 # if laptop set hostname
 if [ -d /sys/class/power_supply/BAT0* ]; then
