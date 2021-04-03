@@ -12,14 +12,14 @@ sudo dnf -y remove nano fedora-chromium-config abrt virtualbox-guest-additions a
 # add flathub repo
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-# add rpm repo
+# add rpmfusion repo
 sudo dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 # dnf update
 sudo dnf -y update
 
 # install packages
-sudo dnf -y install ffmpeg gimp cmatrix cava lm_sensors vim youtube-dl python3-speedtest-cli gcc kernel-devel make g++ chromium-freeworld telegram-desktop neofetch transmission mpv htop gvfs gvfs-mtp simple-mtpfs kitty xss-lock xfce4-power-manager file-roller gamemode libreoffice-writer libreoffice-impress gnome-boxes redshift git maim gnome-calculator 
+sudo dnf -y install ffmpeg gimp cmatrix cava lm_sensors vim youtube-dl python3-speedtest-cli gcc kernel-devel make g++ chromium-freeworld telegram-desktop neofetch transmission mpv htop gvfs gvfs-mtp simple-mtpfs kitty xss-lock xfce4-power-manager file-roller gamemode libreoffice-writer libreoffice-impress gnome-boxes redshift git maim gnome-calculator clipit 
 
 # dots
 cp -r ~/dots/.vimrc ~/
@@ -41,9 +41,7 @@ Section "InputClass"
         Driver "libinput"
         Option "Tapping" "on"
 EndSection
-
 EOF
-
 fi
 
 echo done
