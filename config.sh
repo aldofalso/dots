@@ -23,8 +23,7 @@ sudo dnf -y install ffmpeg gimp cmatrix cava lm_sensors acpi vim youtube-dl pyth
 
 # dots
 cp -r ~/dots/.vimrc ~/
-cp -r ~/dots/.bashrc ~/
-cp -r ~/dots/.config ~/
+echo "shopt -s autocd" | tee -a ~/.bashrc
 
 # gnome settings
 rm -rf ~/.config/dconf

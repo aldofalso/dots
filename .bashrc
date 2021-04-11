@@ -12,8 +12,6 @@ then
 fi
 export PATH
 
-# autocd
-shopt -s autocd
 
 # alias
 alias ls='ls --color=auto'
