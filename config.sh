@@ -7,7 +7,7 @@ echo "max_parallel_downloads=10" | sudo tee -a /etc/dnf/dnf.conf
 sudo systemctl disable NetworkManager-wait-online.service
 
 # remove packages 
-sudo dnf -y remove nano fedora-chromium-config abrt virtualbox-guest-additions azote
+sudo dnf -y remove rhythmbox gnome-maps gnome-contacts nano fedora-chromium-config gnome-weather abrt virtualbox-guest-additions gnome-software totem
 
 # add flathub repo
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -19,29 +19,15 @@ sudo dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-rel
 sudo dnf -y update
 
 # install packages
-sudo dnf -y install ffmpeg gimp cmatrix cava lm_sensors vim youtube-dl python3-speedtest-cli gcc kernel-devel make g++ chromium-freeworld telegram-desktop neofetch transmission mpv htop gvfs gvfs-mtp simple-mtpfs kitty xss-lock xfce4-power-manager file-roller gamemode libreoffice-writer libreoffice-impress gnome-boxes redshift git maim gnome-calculator clipit 
+sudo dnf -y install ffmpeg gimp cmatrix cava lm_sensors acpi vim youtube-dl python3-speedtest-cli gcc kernel-devel make g++ chromium-freeworld telegram-desktop neofetch transmission mpv eclipse 
 
 # dots
 cp -r ~/dots/.vimrc ~/
 cp -r ~/dots/.bashrc ~/
-sudo cp ~/dots/scripts/* /usr/local/bin
 cp -r ~/dots/.config ~/
 
-# remove default wallpaper
-sudo rm -rf /usr/share/backgrounds
-
-# if laptop set hostname & touchpad
-if [ -d /sys/class/power_supply/BAT0* ]; then
-  hostnamectl set-hostname thinkpad &&
-
-  sudo mkdir -p /etc/X11/xorg.conf.d && sudo tee <<'EOF' /etc/X11/xorg.conf.d/90-touchpad.conf 1> /dev/null
-Section "InputClass"
-        Identifier "touchpad"
-        MatchIsTouchpad "on"
-        Driver "libinput"
-        Option "Tapping" "on"
-EndSection
-EOF
-fi
+# gnome settings
+rm -rf ~/.config/dconf
+cp -r ~/dots/dconf ~/.config
 
 echo done
