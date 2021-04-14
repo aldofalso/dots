@@ -7,7 +7,7 @@ echo "max_parallel_downloads=10" | sudo tee -a /etc/dnf/dnf.conf
 sudo systemctl disable NetworkManager-wait-online.service
 
 # remove packages 
-sudo dnf -y remove rhythmbox gnome-maps gnome-contacts nano fedora-chromium-config gnome-weather abrt virtualbox-guest-additions gnome-software totem
+sudo dnf -y remove rhythmbox gnome-maps gnome-contacts nano fedora-chromium-config gnome-weather abrt virtualbox-guest-additions gnome-software totem gnome-tour cheese
 
 # add flathub repo
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
