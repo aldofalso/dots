@@ -7,7 +7,7 @@ printf "Removing networkmanager online service\n"
 sudo systemctl disable NetworkManager-wait-online.service
 
 printf "Removing packages\n"
-sudo dnf -y remove rhythmbox gnome-maps gnome-contacts nano fedora-chromium-config gnome-weather abrt virtualbox-guest-additions gnome-software totem gnome-tour cheese
+sudo dnf -y remove rhythmbox gnome-maps gnome-contacts nano fedora-chromium-config gnome-weather abrt virtualbox-guest-additions gnome-software totem gnome-tour cheese PackageKit
 
 printf "Enabling rpm fusion\n"
 sudo dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
