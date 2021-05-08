@@ -19,10 +19,11 @@ printf "Updating repo\n"
 sudo dnf -y update
 
 printf "Installing packages\n"
-sudo dnf -y install ffmpeg gimp cmatrix cava lm_sensors acpi vim youtube-dl python3-speedtest-cli gcc kernel-devel make g++ chromium-freeworld telegram-desktop neofetch transmission mpv eclipse htop 
+sudo dnf -y install ffmpeg gimp cmatrix cava lm_sensors acpi vim youtube-dl gcc make g++ chromium-freeworld telegram-desktop neofetch transmission mpv htop tuned
 
 printf "Config files\n"
 cp -r ~/dots/.vimrc ~/
+
 echo "shopt -s autocd" | tee -a ~/.bashrc
 
 printf "Gnome settings\n"
