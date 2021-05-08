@@ -1,42 +1,32 @@
 #!/bin/sh
 
-# speed up dnf
+printf "Speed up dnf\n"
 echo "max_parallel_downloads=10" | sudo tee -a /etc/dnf/dnf.conf
 
-# improve boot time
+printf "Removing networkmanager online service\n"
 sudo systemctl disable NetworkManager-wait-online.service
 
-# remove packages 
-sudo dnf -y remove nano fedora-chromium-config abrt virtualbox-guest-additions azote fedora-bookmarks
+printf "Removing packages\n"
+sudo dnf -y remove rhythmbox gnome-maps gnome-contacts nano fedora-chromium-config gnome-weather abrt virtualbox-guest-additions gnome-software totem gnome-tour cheese PackageKit fedora-bookmarks
 
-# add rpmfusion repo
+printf "Enabling rpm fusion\n"
 sudo dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-# add flathub repo
+printf "Enabling flathub\n"
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-# dnf update
+printf "Updating repo\n"
 sudo dnf -y update
 
-# install packages
-sudo dnf -y install ffmpeg gimp cmatrix cava lm_sensors vim youtube-dl python3-speedtest-cli gcc kernel-devel make g++ chromium-freeworld telegram-desktop neofetch transmission mpv htop gvfs gvfs-mtp simple-mtpfs kitty xss-lock file-roller gamemode libreoffice-writer libreoffice-impress gnome-boxes redshift git maim gnome-calculator clipit 
+printf "Installing packages\n"
+sudo dnf -y install ffmpeg gimp cmatrix cava lm_sensors acpi vim youtube-dl python3-speedtest-cli gcc kernel-devel make g++ chromium-freeworld telegram-desktop neofetch transmission mpv eclipse htop 
 
-# dots
+printf "Config files\n"
 cp -r ~/dots/.vimrc ~/
-cp -r ~/dots/.config ~/
-
-# remove default wallpaper
-sudo rm -rf /usr/share/backgrounds
-
-  sudo mkdir -p /etc/X11/xorg.conf.d && sudo tee <<'EOF' /etc/X11/xorg.conf.d/90-touchpad.conf 1> /dev/null
-Section "InputClass"
-        Identifier "touchpad"
-        MatchIsTouchpad "on"
-        Driver "libinput"
-        Option "Tapping" "on"
-EndSection
-EOF
-
 echo "shopt -s autocd" | tee -a ~/.bashrc
+
+printf "Gnome settings\n"
+rm -rf ~/.config/dconf
+cp -r ~/dots/dconf ~/.config
 
 printf "Done!\n\n"
